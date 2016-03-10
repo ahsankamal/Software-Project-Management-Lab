@@ -15,12 +15,6 @@ mode.push_back("organic");
 mode.push_back("semidetached");
 mode.push_back("embedded"); 
 
-vector<string> phase;
-phase.push_back("Plan and requirements");
-phase.push_back("System Design");
-phase.push_back("Detailed Design");
-phase.push_back("Module code and Test");
-phase.push_back("Integration and Test");
 
 vector<string> driver;
 driver.push_back("RELY");
@@ -69,25 +63,7 @@ float costdrivers[15][6]={
                 {1.24,1.10,1,0.91,0.83,-1}, 
                 {1.23,1.08,1,1.04,1.10,-1} 
                 }; 
-
-//Life cycle phase values of mp and tp
-float mp[6][5]={ //
-            {0.06,0.16,0.26,0.42,0.16}, 
-            {0.06,0.16,0.24,0.38,0.22}, 
-            {0.07,0.17,0.25,0.33,0.25}, 
-            {0.07,0.17,0.24,0.31,0.28}, 
-            {0.08,0.18,0.25,0.26,0.31}, 
-            {0.08,0.18,0.24,0.24,0.34} 
-          }; 
-
-  float tp[6][5]={ 
-            {0.10,0.19,0.24,0.39,0.18}, 
-            {0.12,0.19,0.21,0.34,0.26}, 
-            {0.20,0.26,0.21,0.27,0.26}, 
-            {0.22,0.27,0.19,0.25,0.29}, 
-            {0.36,0.36,0.18,0.18,0.28}, 
-            {0.40,0.38,0.16,0.16,0.30} 
-          };                 
+             
 
   float effort,EAF,a,devtime,staff,productivity;                 
 
@@ -124,7 +100,7 @@ int rating;
     EAF=EAF*a; 
   } 
 
-  
+
   printf("\nEAF = %f",EAF);
   effort=(intermediate_coef[model][0]*pow(size,intermediate_coef[model][1])) * EAF; 
   devtime=intermediate_coef[model][2]*pow(effort,intermediate_coef[model][3]); 
